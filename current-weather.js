@@ -13,5 +13,6 @@ $api_key = "f98fd64b6cc0085c37e57e223bb4fb6f"; // Brent Open Weather Map API key
         })
         .done(function( data ) {
             $('#temperature').html(Math.floor(data.main.temp * (9/5) - 459.67) + " &deg;F"); // Response is in ºK
+            $('#city').text(data.name);
         });
 })();

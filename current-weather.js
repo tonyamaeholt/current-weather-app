@@ -10,8 +10,7 @@ $temp = "";
     var OpenWeatherAPI = "http://api.openweathermap.org/data/2.5/weather?";
     $.getJSON( OpenWeatherAPI, {
             id: $city,
-            APPID: $api_key,
-            format: "json"
+            APPID: $api_key
         })
         .done(function( data ) {
             $temp = data.main.temp; // Response is in ºK
@@ -20,12 +19,17 @@ $temp = "";
         });
 })();
 
-$('#to-celsius').on('click', function() {
-    $('#temperature').html(convertToCelsius($temp));
-});
-
-$('#to-farenheit').on('click', function() {
-    $('#temperature').html(convertToFarenheit($temp));
+$('#switch').on('click', function() {
+    if ($(this).hasClass('farenheit')) {
+        $('#temperature').html(convertToCelsius($temp));
+        $(this).removeClass('farenheit').addClass('celsius');
+        console.log('C');
+    }
+    else {
+        $('#temperature').html(convertToFarenheit($temp));
+        $(this).removeClass('celsius').addClass('farenheit');
+        console.log('F');
+    }
 });
 
 function convertToFarenheit(kelvin) {

@@ -3,27 +3,20 @@
 <head><meta charset="utf-8">
 <title>Local Weather App</title>
 <link rel="stylesheet" href="stylesheet.css"/>
-<script src="app.js"></script>
 </head>
 <body>
 
 <div id="header">
 <h1>Current Weather!</h1>
 <p>The current temperature in <span id="city" class="city"></span> is <span id="temperature" class="temperature"></span>.</p>
-<button id="to-celsius">&deg;C</button><button id="to-farenheit">&deg;F</button>
 
 </div>
 
-<div id="location"></div>
-<p> Saco </p>
-<div id="temperature"></div>
-<p> 70 degrees </p>
-
 <div id="toggle">
 
-  <label class="switch">
+  <label id="switch" class="switch farenheit">
     <input type="checkbox">
-    <div class="slider round"></div>
+    <div id="slider" class="slider round"></div>
 <h2>F --> c</h2>
   </label>
 </div>
